@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: Ping all servers
+      action: ping
+    - debug: msg="Hello"
+
+- hosts: dev
+  tasks:
+    - debug: msg="Hello dev"

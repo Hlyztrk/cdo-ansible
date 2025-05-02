@@ -1,0 +1,13 @@
+- hosts: dev
+  become: true
+  tasks:
+    - dnf: 
+        name:
+          - httpd
+        state: present
+    - service: 
+        name: httpd
+        state: started
+        enabled: yes
+    - raw: "echo Welcome to an Ansible configured server | sudo tee /var/www/html/index.html"
+
